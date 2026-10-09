@@ -1,0 +1,58 @@
+/* Buscador a pantalla completa */
+.search{position:fixed;inset:0;z-index:var(--z-search);display:flex;flex-direction:column;background:var(--bg);
+  opacity:0;transform:translateY(18px);transition:opacity .25s var(--ease),transform .3s var(--ease)}
+.search.open{opacity:1;transform:none}
+.s-head{flex:none;display:flex;align-items:center;gap:8px;max-width:760px;width:100%;margin-inline:auto;
+  padding:calc(10px + env(safe-area-inset-top,0px)) 12px 12px}
+.s-back,.s-clr{flex:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:var(--fg)}
+.s-field{position:relative;flex:1;min-width:0}
+.s-field .ic{position:absolute;inset-inline-start:14px;top:50%;translate:0 -50%;color:var(--gold);pointer-events:none}
+.s-field input{width:100%;height:52px;border-radius:16px;border:1px solid var(--line-2);background:var(--surface);padding-inline:44px 14px;font-size:1rem;
+  -webkit-appearance:none;appearance:none;transition:border-color .2s,box-shadow .2s}
+.s-field input::-webkit-search-cancel-button{display:none}
+.s-field input::placeholder{color:var(--muted)}
+.s-field input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 4px color-mix(in srgb,var(--gold) 18%,transparent)}
+.s-body{flex:1;overflow-y:auto;overscroll-behavior:contain;width:100%;max-width:760px;margin-inline:auto;padding:4px 16px calc(40px + env(safe-area-inset-bottom,0px))}
+
+.s-label{margin:20px 0 10px;font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+html[dir="rtl"] .s-label{letter-spacing:.02em}
+.s-label:first-child{margin-top:8px}
+.chipset{display:flex;flex-wrap:wrap;gap:8px}
+.chipset.row{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-inline:-16px;padding-inline:16px}
+.chipset.row::-webkit-scrollbar{display:none}
+.chipset.row .fchip{flex:none}
+.fchip{display:inline-flex;align-items:center;gap:8px;min-height:42px;padding:0 16px;border-radius:999px;border:1px solid var(--line-2);background:var(--surface);
+  font-weight:600;font-size:.9rem;transition:background .2s,border-color .2s,color .2s,transform .2s var(--ease)}
+.fchip:active{transform:scale(.95)}
+.fchip i{width:9px;height:9px;border-radius:50%;background:var(--c)}
+.fchip[aria-pressed="true"]{background:var(--c);border-color:var(--c);color:#fffaf0}
+.fchip[aria-pressed="true"] i{background:#fffaf0}
+.fchip.idea .ic{width:16px;height:16px;color:var(--gold)}
+
+.s-cats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.s-cat{position:relative;isolation:isolate;display:block;height:92px;border-radius:var(--r-m);overflow:hidden;color:var(--on-photo);text-decoration:none}
+.s-cat .media{position:absolute;inset:0;z-index:-2}
+.s-cat::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,color-mix(in srgb,var(--cat) 60%,var(--ink)) 0%,rgba(11,9,7,.35) 70%)}
+.s-cat-in{position:absolute;inset:auto 12px 10px;display:flex;flex-direction:column}
+.s-cat b{font-weight:700;font-size:.95rem;line-height:1.15}
+.s-cat small{font-size:.75rem;color:var(--on-photo-2)}
+
+.s-count{margin:14px 0 4px;font-size:.85rem;color:var(--muted)}
+.r-group{margin-top:18px}
+.r-group h3{display:flex;align-items:center;gap:8px;padding-bottom:8px;border-bottom:2px solid var(--cat);font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+html[dir="rtl"] .r-group h3{letter-spacing:.02em}
+.r-group h3 i{width:9px;height:9px;border-radius:50%;background:var(--cat)}
+.r-group h3 span{margin-inline-start:auto;color:var(--muted);font-weight:600}
+.res{display:grid;grid-template-columns:58px minmax(0,1fr) auto auto;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line);text-decoration:none}
+.res .media{width:58px;height:58px;border-radius:14px}
+.res-tx b{display:block;font-weight:600;line-height:1.25}
+.res-tx small{display:block;margin-top:2px;font-size:.78rem;font-style:italic;color:var(--muted)}
+.res-pr{font-weight:700;color:var(--gold);white-space:nowrap;font-variant-numeric:tabular-nums}
+.res>.ic{width:18px;height:18px;color:var(--faint)}
+.s-empty{display:grid;justify-items:center;gap:14px;padding:48px 0;text-align:center;color:var(--muted)}
+.s-empty svg{width:46px;height:46px;color:var(--gold);opacity:.7}
+
+@media (hover:hover){
+  .fchip:hover{border-color:var(--gold)}
+  .res:hover .res-tx b{color:var(--gold)}
+}

@@ -1,0 +1,8 @@
+# Configuración local del editor / Claude
+.claude/
+# Copia de la primera versión (solo local)
+_backup/
+# Sistema
+Thumbs.db
+desktop.ini
+.DS_Store

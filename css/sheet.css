@@ -1,0 +1,24 @@
+/* Hoja inferior (ajustes) */
+.scrim{position:fixed;inset:0;z-index:var(--z-sheet);display:flex;align-items:flex-end;justify-content:center;background:var(--scrim);opacity:0;transition:opacity .3s}
+.scrim.open{opacity:1}
+.sheet{position:relative;width:100%;max-width:560px;max-height:90vh;max-height:90dvh;display:flex;flex-direction:column;background:var(--surface);
+  border:1px solid var(--line);border-bottom:0;border-radius:28px 28px 0 0;box-shadow:var(--shadow);transform:translateY(100%);transition:transform .4s var(--ease)}
+.scrim.open .sheet{transform:none}
+.handle-zone{flex:none;padding:10px 0 6px;touch-action:none;cursor:grab}
+.handle{display:block;width:44px;height:5px;margin:0 auto;border-radius:3px;background:var(--line-2)}
+.sbody{overflow-y:auto;overscroll-behavior:contain;padding:2px 16px calc(24px + env(safe-area-inset-bottom,0px))}
+.shead{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:8px;touch-action:none}
+.shead h2{font-family:var(--font-display);font-weight:400;font-size:1.55rem}
+html[dir="rtl"] .shead h2{font-family:var(--font-ar);font-weight:700}
+.x{flex:none;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line-2)}
+.grp{margin-top:18px}
+.grp h3{margin-bottom:8px;font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+html[dir="rtl"] .grp h3{letter-spacing:.02em}
+.lgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.lrow{display:flex;align-items:center;gap:10px;min-height:50px;padding:0 12px;border-radius:14px;border:1px solid var(--line-2);font-weight:600;text-align:start}
+.lrow b{flex:none;width:24px;font-size:.7rem;letter-spacing:.08em;color:var(--gold)}
+.lrow[lang="ar"] span{font-family:var(--font-ar)}
+.lrow[aria-pressed="true"]{border-color:var(--gold);background:color-mix(in srgb,var(--gold) 16%,var(--surface))}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.seg button{min-height:48px;border-radius:14px;border:1px solid var(--line-2);font-weight:600;text-align:center;transition:background .2s}
+.seg button[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:var(--on-gold)}

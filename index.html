@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Carta · Restaurante Nor</title>
+<meta name="description" content="Carta de Restaurante Nor (Reus): cocina mediterránea con toque marroquí. En castellano, català, English, français, Deutsch y العربية.">
+<meta name="theme-color" content="#0c0b09" id="themeColor">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Restaurante Nor · Carta">
+<meta property="og:description" content="Cocina mediterránea con toque marroquí · Reus">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Marcellus&family=Tajawal:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/topbar.css">
+<link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/search.css">
+<link rel="stylesheet" href="css/sheet.css">
+<link rel="stylesheet" href="css/category.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="star" viewBox="0 0 100 100"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"><rect x="16" y="16" width="68" height="68"/><rect x="16" y="16" width="68" height="68" transform="rotate(45 50 50)"/><circle cx="50" cy="50" r="23"/><rect x="34" y="34" width="32" height="32" transform="rotate(22.5 50 50)"/><rect x="34" y="34" width="32" height="32" transform="rotate(67.5 50 50)"/></g><circle cx="50" cy="50" r="5" fill="currentColor"/></symbol>
+</svg>
+
+<a class="skip" href="#main" id="skip">Ir al contenido</a>
+
+<!-- Barra superior (común a todas las páginas) -->
+<header class="topbar" id="topbar">
+  <div class="topbar-in">
+    <div class="tb-start">
+      <button class="tb-btn tb-back" id="tbBack" type="button"><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+      <a class="tb-logo" id="tbLogo" href="#/"><span aria-hidden="true">N</span><svg aria-hidden="true"><use href="#star"/></svg><span aria-hidden="true">R</span></a>
+      <span class="tb-title" id="tbTitle"></span>
+    </div>
+    <div class="tb-end">
+      <button class="tb-btn tb-search" id="tbSearch" type="button" data-search><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button>
+      <button class="tb-pill" id="tbSet" type="button" data-settings><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg><span id="tbCode">ES</span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <div class="view" id="view-home"></div>
+  <div class="view" id="view-cat" hidden></div>
+</main>
+
+<!-- Buscador a pantalla completa -->
+<div class="search" id="search" role="dialog" aria-modal="true" hidden></div>
+
+<!-- Hoja inferior (ajustes) -->
+<div class="scrim" id="scrim" hidden>
+  <div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetT">
+    <div class="handle-zone" data-drag><span class="handle"></span></div>
+    <div class="sbody" id="sbody"></div>
+  </div>
+</div>
+
+<script src="js/i18n.js" defer></script>
+<script src="js/data.js" defer></script>
+<script src="js/demo-photos.js" defer></script>
+<script src="js/core.js" defer></script>
+<script src="js/router.js" defer></script>
+<script src="js/settings.js" defer></script>
+<script src="js/search.js" defer></script>
+<script src="js/home.js" defer></script>
+<script src="js/category.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+/* Base: reset, tipografía, utilidades, imágenes con respaldo, piezas compartidas */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+html.locked{overflow:hidden}
+body{margin:0;min-height:100vh;background:var(--bg);color:var(--fg);font:400 1rem/1.45 var(--font-body);
+  -webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:var(--grain);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+html[dir="rtl"] body{font-family:var(--font-ar)}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;margin:0;cursor:pointer;text-align:inherit}
+button:disabled{opacity:.35;cursor:default}
+a{color:inherit}
+input{font:inherit;color:inherit}
+h1,h2,h3,h4,p,ul{margin:0;padding:0}
+ul{list-style:none}
+img{max-width:100%;display:block}
+[hidden]{display:none!important}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px;border-radius:10px}
+main:focus{outline:none}
+
+.wrap{width:100%;max-width:760px;margin-inline:auto;padding-inline:16px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:fixed;top:-80px;inset-inline-start:16px;z-index:100;padding:10px 14px;border-radius:10px;background:var(--gold);color:var(--on-gold);font-weight:700;text-decoration:none}
+.skip:focus{top:12px}
+.ic{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+html[dir="rtl"] .flip{transform:scaleX(-1)}
+
+/* ---------- Imagen con respaldo ----------
+   Mientras no carga o si no hay foto: degradado del color de la categoría + zellige */
+.media{position:relative;display:block;overflow:hidden;
+  background:#1d160d;
+  background:radial-gradient(120% 95% at 75% 15%,color-mix(in srgb,var(--cat,#d9ab45) 62%,#1d160d),color-mix(in srgb,var(--cat,#d9ab45) 20%,#0b0907) 72%)}
+.media::before{content:"";position:absolute;inset:0;background:#f0cf7d;opacity:.16;
+  -webkit-mask:var(--zellige) 50% 50%/56px 56px repeat;mask:var(--zellige) 50% 50%/56px 56px repeat}
+.media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s var(--ease),transform .9s var(--ease)}
+.media img.ok{opacity:1}
+.media.noimg img{display:none}
+
+/* Patrón zellige (estrella de 8 puntas) */
+:root{--zellige:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' fill='none' stroke='%23000' stroke-width='1.1'%3E%3Cpath d='M22 22h20v20H22zM32 17.9L46.1 32 32 46.1 17.9 32zM32 0v17.9M32 46.1V64M0 32h17.9M46.1 32H64M22 22L0 0M42 22L64 0M22 42L0 64M42 42L64 64'/%3E%3Ccircle cx='32' cy='32' r='3'/%3E%3C/svg%3E")}
+.zellige{position:absolute;inset:0;pointer-events:none;background:var(--gold);
+  -webkit-mask:var(--zellige) 50% 0/64px 64px repeat;mask:var(--zellige) 50% 0/64px 64px repeat}
+
+/* Franja azul con rombos dorados (identidad de la carta de papel) */
+.band{height:14px;background-color:var(--navy);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='14'%3E%3Cpath d='M12 1.5l10 5.5-10 5.5L2 7z' fill='none' stroke='%23dcae44' stroke-width='1.2'/%3E%3Ccircle cx='12' cy='7' r='1.6' fill='%235aa3c4'/%3E%3C/svg%3E");
+  background-repeat:repeat-x;background-position:center}
+
+/* Encabezado de sección */
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:18px}
+.kicker{display:flex;align-items:center;gap:8px;font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.kicker::before{content:"";width:7px;height:7px;transform:rotate(45deg);background:currentColor}
+.kicker.light{color:var(--gold-hi)}
+html[dir="rtl"] .kicker{letter-spacing:.04em}
+.sec-title{margin-top:8px;font-family:var(--font-display);font-weight:400;font-size:2.1rem;line-height:1.02;letter-spacing:-.005em;text-wrap:balance}
+html[dir="rtl"] .sec-title{font-family:var(--font-ar);font-weight:700;font-size:1.9rem}
+.sec-aside{font-size:.85rem;color:var(--muted);white-space:nowrap}
+
+.btn-gold{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:0 22px;border-radius:var(--r-m);background:var(--gold);color:var(--on-gold);font-weight:700;transition:transform .2s var(--ease)}
+.btn-gold:active{transform:scale(.96)}
+
+/* Etiqueta pequeña sobre foto */
+.card-meta{display:inline-flex;align-items:center;align-self:flex-start;padding:5px 10px;border-radius:999px;background:rgba(10,8,6,.42);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:var(--on-photo);font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+html[dir="rtl"] .card-meta{letter-spacing:.02em}
+
+.foot{display:flex;flex-direction:column;align-items:center;gap:10px;padding:56px 16px calc(48px + env(safe-area-inset-bottom,0px));color:var(--muted);font-size:.72rem;letter-spacing:.24em;text-transform:uppercase}
+.foot svg{width:34px;height:34px;color:var(--gold)}
+
+/* Entrada al cargar y al hacer scroll */
+.rise{animation:rise .8s var(--ease) both;animation-delay:calc(var(--d,0) * 90ms + 80ms)}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:calc(var(--i,0) * 80ms)}
+.rv.in{opacity:1;transform:none}
+.view.enter{animation:viewIn .45s var(--ease) both}
+@keyframes viewIn{from{opacity:0;transform:translateX(28px)}}
+html[dir="rtl"] .view.enter{animation-name:viewInR}
+@keyframes viewInR{from{opacity:0;transform:translateX(-28px)}}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition-duration:0s!important;transition-delay:0s!important}
+  .rv{opacity:1;transform:none}
+}
