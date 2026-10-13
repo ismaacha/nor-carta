@@ -56,7 +56,7 @@ Todo el JS cuelga de un objeto global `window.NOR` (scripts clásicos, sin módu
 
 ## Fotos
 - Se guardan con el id del plato o del apartado: `assets/img/platos/<id>.jpg`, `assets/img/categorias/<id>.jpg`. La lista completa está en `assets/img/LEEME.md`. No hace falta tocar código.
-- Orden de carga: foto local → foto de muestra (`js/demo-photos.js`) → degradado con el color del apartado y zellige.
+- Orden de carga: foto local → foto de muestra (`js/demo-photos.js`, hay una para cada plato y apartado) → degradado con el color del apartado y zellige.
 - Bebidas: basta con una foto de la marca o de un ejemplo de esa bebida.
 
 ## Para añadir o cambiar un plato
