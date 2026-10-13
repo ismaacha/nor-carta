@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Tarjeta de mesa · Nor Carta</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700&family=Marcellus&family=Tajawal:wght@500&display=swap">
+<style>
+/* Tarjeta A6 (105 × 148 mm) para poner en las mesas */
+@page{size:105mm 148mm;margin:0}
+*{box-sizing:border-box}
+html,body{margin:0;background:#0c0b09}
+.card{position:relative;overflow:hidden;width:105mm;height:148mm;display:flex;flex-direction:column;align-items:center;
+  padding:11mm 9mm 0;background:#0c0b09;color:#f3ecdc;font-family:"Hanken Grotesk",system-ui,sans-serif;text-align:center;
+  -webkit-print-color-adjust:exact;print-color-adjust:exact}
+.pat{position:absolute;inset:0;background:#d9ab45;opacity:.15;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' fill='none' stroke='%23000' stroke-width='1.1'%3E%3Cpath d='M22 22h20v20H22zM32 17.9L46.1 32 32 46.1 17.9 32zM32 0v17.9M32 46.1V64M0 32h17.9M46.1 32H64M22 22L0 0M42 22L64 0M22 42L0 64M42 42L64 64'/%3E%3Ccircle cx='32' cy='32' r='3'/%3E%3C/svg%3E") 50% 0/15mm 15mm repeat;}
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' fill='none' stroke='%23000' stroke-width='1.1'%3E%3Cpath d='M22 22h20v20H22zM32 17.9L46.1 32 32 46.1 17.9 32zM32 0v17.9M32 46.1V64M0 32h17.9M46.1 32H64M22 22L0 0M42 22L64 0M22 42L0 64M42 42L64 64'/%3E%3Ccircle cx='32' cy='32' r='3'/%3E%3C/svg%3E") 50% 0/15mm 15mm repeat;}
+.glow{position:absolute;left:50%;top:20mm;width:90mm;height:90mm;translate:-50% -50%;border-radius:50%;background:radial-gradient(circle,rgba(217,171,69,.22),transparent 70%)}
+.card>*:not(.pat):not(.glow):not(.band):not(.foot){position:relative}
+.over{font-size:2.6mm;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:#a59c86}
+.wm{display:flex;align-items:center;justify-content:center;margin-top:3mm;font-family:"Marcellus",serif;font-size:21mm;line-height:.9;color:#d9ab45}
+.wm svg{width:.86em;height:.86em;margin-inline:.03em}
+.carta{display:flex;align-items:center;gap:3mm;margin-top:3mm;font-family:"Marcellus",serif;font-size:6mm}
+.carta::before,.carta::after{content:"";width:9mm;height:.3mm;background:linear-gradient(90deg,transparent,#d9ab45)}
+.carta::after{transform:scaleX(-1)}
+.qr{margin-top:6mm;padding:2.6mm;border-radius:5mm;background:#fffaf0;box-shadow:0 0 0 .6mm #d9ab45,0 4mm 10mm rgba(0,0,0,.5)}
+.qr img{display:block;width:50mm;height:50mm}
+.cta{margin-top:6mm;font-size:4.2mm;font-weight:700;letter-spacing:.01em}
+.langs{margin-top:1.6mm;font-size:2.7mm;color:#a59c86;letter-spacing:.04em}
+.langs span[lang="ar"]{font-family:"Tajawal",sans-serif;font-size:3.1mm}
+.band{position:absolute;left:0;right:0;bottom:0;height:4.2mm;background-color:#0e2a38;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='14'%3E%3Cpath d='M12 1.5l10 5.5-10 5.5L2 7z' fill='none' stroke='%23dcae44' stroke-width='1.2'/%3E%3Ccircle cx='12' cy='7' r='1.6' fill='%235aa3c4'/%3E%3C/svg%3E");
+  background-size:auto 100%;background-repeat:repeat-x;background-position:center}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="pat"></div><div class="glow"></div>
+  <p class="over">Restaurante · Reus</p>
+  <div class="wm"><span>N</span><svg viewBox="0 0 100 100"><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"><rect x="16" y="16" width="68" height="68"/><rect x="16" y="16" width="68" height="68" transform="rotate(45 50 50)"/><circle cx="50" cy="50" r="23"/><rect x="34" y="34" width="32" height="32" transform="rotate(22.5 50 50)"/><rect x="34" y="34" width="32" height="32" transform="rotate(67.5 50 50)"/></g><circle cx="50" cy="50" r="5" fill="currentColor"/></svg><span>R</span></div>
+  <p class="carta">Carta</p>
+  <div class="qr"><img src="nor-carta-qr.svg" alt="Código QR de la carta"></div>
+  <p class="cta">Escanea para ver la carta</p>
+  <p class="langs">Escaneja · Scan · Scannez · Scannen · <span lang="ar">امسح</span></p>
+  <div class="band"></div>
+</div>
+</body>
+</html>
