@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Cartel QR · Nor Carta</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700&family=Marcellus&display=swap">
+<style>
+/* Cartel con el QR en forma de arco marroquí. A5 (148 × 210 mm).
+   Añade ?papel a la URL para verlo sobre fondo de papel. */
+@page{size:148mm 210mm;margin:0}
+html,body{margin:0;background:transparent}
+body.papel{background:#f6f0e4}
+svg{display:block;width:1000px;height:1414px}
+@media print{svg{width:148mm;height:210mm}}
+.disp{font-family:"Marcellus",Georgia,serif}
+.sans{font-family:"Hanken Grotesk",system-ui,sans-serif}
+</style>
+</head>
+<body>
+<svg viewBox="0 0 1000 1414" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+  <!-- Silueta: cuerpo rectangular con arco de herradura apuntado arriba -->
+  <path id="shape" d="M110 1270V620Q110 560 170 560H200V470C200 330 330 290 385 235C445 175 492 145 500 66C508 145 555 175 615 235C670 290 800 330 800 470V560H830Q890 560 890 620V1270Q890 1330 830 1330H170Q110 1330 110 1270Z"/>
+  <clipPath id="clip"><use href="#shape"/></clipPath>
+
+  <!-- Zellige: estrella de 8 puntas en retícula -->
+  <pattern id="zel" width="64" height="64" patternUnits="userSpaceOnUse" x="20" y="0">
+    <g fill="none" stroke="#d9ab45" stroke-width="1.1">
+      <path d="M22 22h20v20H22zM32 17.9L46.1 32 32 46.1 17.9 32zM32 0v17.9M32 46.1V64M0 32h17.9M46.1 32H64M22 22L0 0M42 22L64 0M22 42L0 64M42 42L64 64"/>
+      <circle cx="32" cy="32" r="3"/>
+    </g>
+  </pattern>
+
+  <radialGradient id="glowTop" cx="50%" cy="28%" r="55%">
+    <stop offset="0" stop-color="#d9ab45" stop-opacity=".28"/>
+    <stop offset="1" stop-color="#d9ab45" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="lamp" cx="50%" cy="50%" r="50%">
+    <stop offset="0" stop-color="#f6c76a" stop-opacity=".75"/>
+    <stop offset=".45" stop-color="#d9ab45" stop-opacity=".22"/>
+    <stop offset="1" stop-color="#d9ab45" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#000" stop-opacity="0"/>
+    <stop offset=".55" stop-color="#000" stop-opacity=".55"/>
+    <stop offset="1" stop-color="#000" stop-opacity=".85"/>
+  </linearGradient>
+
+  <!-- Farol marroquí (dibujo de línea dorada) -->
+  <symbol id="lantern" viewBox="0 0 60 150" overflow="visible">
+    <g fill="none" stroke="#d9ab45" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round">
+      <circle cx="30" cy="4" r="3.5"/>
+      <path d="M30 8v8"/>
+      <path d="M17 34L30 16 43 34Z" fill="#0c0b09"/>
+      <path d="M12 38h36"/>
+      <path d="M15 38C8 60 9 86 22 104H38C51 86 52 60 45 38Z" fill="#17120a"/>
+      <path d="M30 40V102M22 41C17 60 17 84 25 103M38 41C43 60 43 84 35 103"/>
+      <path d="M30 60L37 71 30 82 23 71Z" fill="#f0cf7d" stroke="#f0cf7d" fill-opacity=".9"/>
+      <path d="M22 104H38L34 113H26Z" fill="#0c0b09"/>
+      <path d="M30 113V122"/>
+      <circle cx="30" cy="125.5" r="3.5" fill="#d9ab45"/>
+    </g>
+  </symbol>
+
+  <!-- Estrella de NOR -->
+  <symbol id="star" viewBox="0 0 100 100">
+    <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"><rect x="16" y="16" width="68" height="68"/><rect x="16" y="16" width="68" height="68" transform="rotate(45 50 50)"/><circle cx="50" cy="50" r="23"/><rect x="34" y="34" width="32" height="32" transform="rotate(22.5 50 50)"/><rect x="34" y="34" width="32" height="32" transform="rotate(67.5 50 50)"/></g><circle cx="50" cy="50" r="5" fill="currentColor"/>
+  </symbol>
+
+  <!-- Rama de olivo (mediterráneo) -->
+  <symbol id="olive" viewBox="0 0 170 70" overflow="visible">
+    <g stroke="#d9ab45" stroke-width="2" stroke-linecap="round" fill="none">
+      <path d="M4 52C40 46 92 36 166 14"/>
+    </g>
+    <g fill="#d9ab45">
+      <ellipse cx="34" cy="38" rx="13" ry="4.6" transform="rotate(-38 34 38)"/>
+      <ellipse cx="44" cy="58" rx="13" ry="4.6" transform="rotate(22 44 58)"/>
+      <ellipse cx="72" cy="30" rx="13" ry="4.6" transform="rotate(-42 72 30)"/>
+      <ellipse cx="82" cy="50" rx="13" ry="4.6" transform="rotate(18 82 50)"/>
+      <ellipse cx="110" cy="20" rx="12" ry="4.4" transform="rotate(-46 110 20)"/>
+      <ellipse cx="120" cy="40" rx="12" ry="4.4" transform="rotate(12 120 40)"/>
+      <ellipse cx="148" cy="10" rx="11" ry="4" transform="rotate(-30 148 10)"/>
+    </g>
+    <g fill="#2f6f8f" stroke="#d9ab45" stroke-width="1.5">
+      <ellipse cx="58" cy="50" rx="5" ry="6.5"/>
+      <ellipse cx="98" cy="40" rx="4.6" ry="6"/>
+    </g>
+  </symbol>
+
+  <!-- Franja azul con rombos -->
+  <pattern id="band" width="24" height="20" patternUnits="userSpaceOnUse" x="8" y="1278">
+    <rect width="24" height="20" fill="#0e2a38"/>
+    <path d="M12 3l10 7-10 7L2 10z" fill="none" stroke="#dcae44" stroke-width="1.4"/>
+    <circle cx="12" cy="10" r="2" fill="#5aa3c4"/>
+  </pattern>
+</defs>
+
+<!-- Fondo negro con zellige y brillo dorado -->
+<g clip-path="url(#clip)">
+  <rect width="1000" height="1414" fill="#0c0b09"/>
+  <rect width="1000" height="1414" fill="url(#zel)" opacity=".16"/>
+  <rect width="1000" height="1414" fill="url(#glowTop)"/>
+  <rect y="1000" width="1000" height="414" fill="url(#fade)" opacity=".5"/>
+
+  <!-- Faroles con su luz -->
+  <circle cx="500" cy="232" r="120" fill="url(#lamp)"/>
+  <circle cx="300" cy="420" r="80" fill="url(#lamp)" opacity=".8"/>
+  <circle cx="700" cy="420" r="80" fill="url(#lamp)" opacity=".8"/>
+  <path d="M500 96V150" stroke="#d9ab45" stroke-width="2"/>
+  <use href="#lantern" x="458" y="146" width="84" height="210"/>
+  <path d="M300 318V350M700 318V350" stroke="#d9ab45" stroke-width="2"/>
+  <use href="#lantern" x="274" y="346" width="52" height="130"/>
+  <use href="#lantern" x="674" y="346" width="52" height="130"/>
+
+  <!-- Marca -->
+  <text x="500" y="414" class="sans" font-size="13" font-weight="600" fill="#a59c86" text-anchor="middle" letter-spacing="6">RESTAURANTE · REUS</text>
+  <g class="disp" fill="#d9ab45" text-anchor="middle">
+    <text x="420" y="520" font-size="96">N</text>
+    <text x="580" y="520" font-size="96">R</text>
+  </g>
+  <use href="#star" x="461" y="436" width="78" height="78" color="#d9ab45"/>
+  <g stroke="#d9ab45" stroke-width="1.6"><path d="M392 546h66M542 546h66"/></g>
+  <text x="500" y="555" class="disp" font-size="28" fill="#f3ecdc" text-anchor="middle" letter-spacing="1">Carta</text>
+
+  <!-- Base: frase, olivos y franja -->
+  <text x="500" y="1252" class="sans" font-size="17" font-weight="700" fill="#f3ecdc" text-anchor="middle" letter-spacing="4">MEDITERRÁNEO · TOQUE MARROQUÍ</text>
+  <use href="#olive" x="128" y="1204" width="146" height="60"/>
+  <use href="#olive" x="128" y="1204" width="146" height="60" transform="translate(1000 0) scale(-1 1)"/>
+  <rect x="0" y="1278" width="1000" height="20" fill="url(#band)"/>
+  
+</g>
+
+<!-- Borde triple dorado -->
+<use href="#shape" fill="none" stroke="#d9ab45" stroke-width="26"/>
+<use href="#shape" fill="none" stroke="#0c0b09" stroke-width="14"/>
+<use href="#shape" fill="none" stroke="#d9ab45" stroke-width="4"/>
+
+<!-- Panel del QR -->
+<rect x="176" y="590" width="648" height="620" rx="34" fill="#fffaf0"/>
+<rect x="190" y="604" width="620" height="592" rx="24" fill="none" stroke="#d9ab45" stroke-width="1.6"/>
+<image href="nor-carta-qr.svg" x="248" y="620" width="504" height="504"/>
+<text x="500" y="1158" class="sans" font-size="27" font-weight="700" fill="#17120a" text-anchor="middle">Escanea para ver la carta</text>
+<text x="500" y="1186" class="sans" font-size="15" font-weight="600" fill="#7d570b" text-anchor="middle" letter-spacing="2.5">ESCANEJA · SCAN · SCANNEZ · SCANNEN</text>
+<!-- Escuadras doradas en las esquinas del panel -->
+<g fill="none" stroke="#d9ab45" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M168 646V598H216M832 646V598H784M168 1154V1202H216M832 1154V1202H784"/>
+</g>
+</svg>
+<script>if(location.search.indexOf("papel")>=0)document.body.classList.add("papel");</script>
+</body>
+</html>
