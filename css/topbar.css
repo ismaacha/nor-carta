@@ -19,12 +19,12 @@
 html[dir="rtl"] .tb-title{font-family:var(--font-ar);font-weight:700}
 
 /* Portada: el logo y la lupa aparecen al dejar atrás la cabecera */
-.tb-back{display:none}
+.tb-back,.tb-home{display:none}
 .topbar:not(.solid):not(.on-cat) .tb-search{opacity:0;pointer-events:none}
 .topbar.solid:not(.on-cat) .tb-logo{opacity:1;transform:none;pointer-events:auto}
 
 /* Apartado: flecha de volver; el título aparece al bajar */
-.topbar.on-cat .tb-back{display:grid}
+.topbar.on-cat .tb-back,.topbar.on-cat .tb-home{display:grid}
 .topbar.on-cat .tb-logo{display:none}
 .topbar.on-cat.solid .tb-title{opacity:1}
 

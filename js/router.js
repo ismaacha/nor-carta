@@ -48,7 +48,9 @@ function render(){
 
 N.router={
   start:function(){window.addEventListener("hashchange",render);render();},
-  refresh:render
+  refresh:render,
+  /* Ir a la portada, arriba del todo */
+  home:function(){homeScroll=0;if(location.hash.replace(/^#\/?/,"")==="")render();else location.hash="#/";}
 };
 
 })(window.NOR=window.NOR||{});

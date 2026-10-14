@@ -10,6 +10,7 @@ function labels(){
   N.$("tbSet").setAttribute("aria-label",N.t("settings")+" · "+N.t("language"));
   N.$("tbSearch").setAttribute("aria-label",N.t("search"));
   N.$("tbBack").setAttribute("aria-label",N.t("back"));
+  N.$("tbHome").setAttribute("aria-label",N.t("home"));
   N.$("tbLogo").setAttribute("aria-label","Restaurante Nor · "+N.t("home"));
 }
 
@@ -37,6 +38,7 @@ window.addEventListener("scroll",function(){
 },{passive:true});
 window.addEventListener("resize",update);
 
+N.$("tbHome").addEventListener("click",function(){N.router.home();});
 N.$("tbBack").addEventListener("click",function(){
   if(history.length>1&&N.route.cameFromHome)history.back();else location.hash="#/";
 });
