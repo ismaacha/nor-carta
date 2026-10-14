@@ -30,7 +30,6 @@ Recomendado: formato **.jpg**, horizontal o cuadrada, unos 1200 px de ancho y me
 | Ensalada de pasta | `ensalada-de-pasta.jpg` |
 | Ensalada marroquí | `ensalada-marroqui.jpg` |
 | Ensalada de pollo | `ensalada-de-pollo.jpg` |
-| Ensalada de Nor | `ensalada-de-nor.jpg` |
 | Sopa de pescado | `sopa-de-pescado.jpg` |
 | Sopa marroquí (harira) | `sopa-marroqui-harira.jpg` |
 | Baisara | `baisara.jpg` |
@@ -83,12 +82,11 @@ Recomendado: formato **.jpg**, horizontal o cuadrada, unos 1200 px de ancho y me
 | Tajine de ternera con verduras | `tajine-de-ternera-con-verduras.jpg` |
 | Tajine de pollo | `tajine-de-pollo.jpg` |
 | Tajine de kefta | `tajine-de-kefta.jpg` |
-| Tajine de pavo | `tajine-de-pavo.jpg` |
 | Tajine de conejo | `tajine-de-conejo.jpg` |
-| Tajine de pescado | `tajine-de-pescado.jpg` |
 | Tajine pil-pil | `tajine-pil-pil.jpg` |
 | Cuscús (verduras, pollo o ternera) | `cuscus-verduras-pollo-o-ternera.jpg` |
-| Pollo asado (½ pollo) | `pollo-asado-pollo.jpg` |
+| Pollo asado | `pollo-asado.jpg` |
+| Medio pollo asado | `medio-pollo-asado.jpg` |
 | Arroz con pollo | `arroz-con-pollo.jpg` |
 
 ### Snacks
@@ -116,8 +114,11 @@ Recomendado: formato **.jpg**, horizontal o cuadrada, unos 1200 px de ancho y me
 | Plato | Archivo |
 |---|---|
 | Refresco | `refresco.jpg` |
+| Refresco (botella 1,5 L) | `refresco-botella-1-5-l.jpg` |
 | Bebida energética | `bebida-energetica.jpg` |
 | Red Bull | `red-bull.jpg` |
-| Agua | `agua.jpg` |
+| Batido | `batido.jpg` |
+| Agua pequeña | `agua-pequena.jpg` |
+| Agua grande | `agua-grande.jpg` |
 
 Para las bebidas basta con una foto de la marca o de un ejemplo de esa bebida.

@@ -28,7 +28,6 @@ N.DEMO={
     "ensalada-de-pasta":U("1473093295043-cdd812d0e601"),
     "ensalada-marroqui":U("1656853834420-51980b12a920"),
     "ensalada-de-pollo":U("1546069901-ba9599a7e63c"),
-    "ensalada-de-nor":U("1505253716362-afaea1d3d1af"),
     "sopa-de-pescado":U("1571167366136-b57e07761625"),
     "sopa-marroqui-harira":U("1547592166-23ac45744acd"),
     "baisara":U("1613478881379-175a54184a27"),
@@ -65,12 +64,11 @@ N.DEMO={
     "tajine-de-ternera-con-verduras":U("1643019237176-8ae0859f1123"),
     "tajine-de-pollo":U("1682370207954-c8a9cccaabb4"),
     "tajine-de-kefta":U("1661083098412-054431ab7112"),
-    "tajine-de-pavo":U("1519699788450-ad34386a3bfc"),
     "tajine-de-conejo":U("1708782344071-35ed44b849a9"),
-    "tajine-de-pescado":U("1492470026006-0e12a33eb7fb"),
     "tajine-pil-pil":U("1758972572427-fc3d4193bbd2"),
     "cuscus-verduras-pollo-o-ternera":U("1607116685391-29c9e9726561"),
-    "pollo-asado-pollo":U("1606728035253-49e8a23146de"),
+    "pollo-asado":U("1606728035253-49e8a23146de"),
+    "medio-pollo-asado":U("1598103442097-8b74394b95c6"),
     "arroz-con-pollo":U("1603496987674-79600a000f55"),
     /* Snacks */
     "bocadillo-pollo-ternera-kefta-o-mixto":U("1554433607-66b5efe9d304"),
@@ -86,9 +84,12 @@ N.DEMO={
     "helado":U("1567206563064-6f60f40a2b57"),
     /* Bebidas */
     "refresco":U("1554866585-cd94860890b7"),
+    "refresco-botella-1-5-l":U("1594971475674-6a97f8fe8c2b"),
     "bebida-energetica":U("1622543925917-763c34d1a86e"),
     "red-bull":U("1570526427001-9d80d114054d"),
-    "agua":U("1561041695-d2fadf9f318c")
+    "batido":U("1579954115545-a95591f28bfc"),
+    "agua-pequena":U("1561041695-d2fadf9f318c"),
+    "agua-grande":U("1523362628745-0c100150b504")
   }
 };
 })(window.NOR=window.NOR||{});

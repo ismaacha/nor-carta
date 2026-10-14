@@ -13,7 +13,7 @@ Se avanza bloque a bloque; el siguiente empieza cuando el anterior gusta.
 3. Selección para enseñar al camarero, pulido final, publicación y QR.
 
 ## Estado actual (bloque 1: portada)
-- Cabecera con la palabra NOR (estrella de 8 puntas en la O), fondo de zellige con degradado, "Carta", frase de cocina, buscador y "60 platos · 8 apartados".
+- Cabecera con la palabra NOR (estrella de 8 puntas en la O), fondo de zellige con degradado, "Carta", frase de cocina, buscador y el número de platos y apartados (se calcula solo).
 - Sin selector de idiomas en la cabecera: el idioma se cambia desde el botón de ajustes (globo + código) arriba a la derecha. Se detecta solo por el idioma del móvil, o con `?lang=xx` en la URL.
 - Carrusel "Destacados" con fotos a toda tarjeta, avance automático con barras de progreso, se pausa al tocarlo. Platos elegidos en `N.FEATURED` (`js/data.js`).
 - "La carta": una tarjeta grande con foto por apartado, color propio, número, nº de platos, qué contiene y flecha `>` que lleva a `#/c/<apartado>`. Postres y Bebidas en tarjetas más pequeñas.
@@ -66,7 +66,7 @@ Una línea `I(...)` en `N.ITEMS` (`js/data.js`): `I(categoría, [precios], [6 no
 1. Bloque 2: página de apartado con slides y desglose de ingredientes.
 2. Fotos propias de platos y apartados.
 3. Revisar con un hablante nativo las traducciones al árabe darija.
-4. Confirmar con el restaurante: precio de la paella de marisco (7 €) y la fideuà (8 €), qué significa "refresco 1,50 / 3" y "agua 1,50 / 2", alérgenos, y si los platos de "Destacados" les parecen bien.
+4. Confirmar con el restaurante: alérgenos, y si los platos de "Destacados" les parecen bien. Revisar las descripciones de los platos (son genéricas).
 5. Publicar en GitHub Pages y generar el QR. Opcional: teléfono de reservas (877 643 423) y dominio propio.
 
 ## Reglas de trabajo
